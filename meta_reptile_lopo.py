@@ -1,5 +1,102 @@
 #leave one person out for reptile, do training and testing together
 
+"""
+parameter setting:
+MH: 
+source_size = 8000
+target_size = 2000
+window_size = 20
+step = 10
+
+emsize = 120  # embedding dimension
+nhid = 2048  # the dimension of the feedforward network model in nn.TransformerEncoder
+nlayers = 3 # the number of nn.TransformerEncoderLayer in nn.TransformerEncoder
+nhead = 3  # the number of heads in the multiheadattention models
+dropout = 0.1  # the dropout value
+
+innerstepsize = 1e-3  # stepsize in inner loop, 1e-2 really bad
+innerepochs = 30  # number of epochs of each inner loop
+o_outerstepsize = 0.05
+decay_rate = 0.999
+min_learning_rate = 1e-3
+epoch = 250
+max_gradient_norm = 2.0
+innerstepsize_test = 1e-4
+innerepochs_test = 30
+epoch_test = 20
+
+PMP:
+source_size = 8000
+target_size = 2000
+window_size = 20
+step = 10
+
+emsize = 120  # embedding dimension
+nhid = 2048  # the dimension of the feedforward network model in nn.TransformerEncoder
+nlayers = 3 # the number of nn.TransformerEncoderLayer in nn.TransformerEncoder
+nhead = 3  # the number of heads in the multiheadattention models
+dropout = 0.1  # the dropout value
+
+innerstepsize = 5e-4  # stepsize in inner loop, 1e-2 really bad
+innerepochs = 50  # number of epochs of each inner loop
+o_outerstepsize = 0.05
+decay_rate = 0.999
+min_learning_rate = 1e-3
+epoch = 200
+max_gradient_norm = 2.0
+innerstepsize_test = 1e-4
+innerepochs_test = 30
+epoch_test = 20
+
+
+MARS:
+source_size = 8000
+target_size = 2000
+window_size = 20
+step = 10
+
+emsize = 120  # embedding dimension
+nhid = 2048  # the dimension of the feedforward network model in nn.TransformerEncoder
+nlayers = 3 # the number of nn.TransformerEncoderLayer in nn.TransformerEncoder
+nhead = 3  # the number of heads in the multiheadattention models
+dropout = 0.1  # the dropout value
+
+innerstepsize = 2e-3  # stepsize in inner loop, 1e-2 really bad
+innerepochs = 50  # number of epochs of each inner loop
+o_outerstepsize = 0.2
+decay_rate = 0.999
+min_learning_rate = 1e-3
+epoch = 200
+max_gradient_norm = 2.0
+innerstepsize_test = 1e-4
+innerepochs_test = 30
+epoch_test = 20
+
+UCI:
+source_size = 8000
+target_size = 2000
+window_size = 20
+step = 10
+
+emsize = 120  # embedding dimension
+nhid = 2048  # the dimension of the feedforward network model in nn.TransformerEncoder
+nlayers = 2 # the number of nn.TransformerEncoderLayer in nn.TransformerEncoder
+nhead = 3  # the number of heads in the multiheadattention models
+dropout = 0.1  # the dropout value
+
+innerstepsize = 1e-3  # stepsize in inner loop, 1e-2 really bad
+innerepochs = 50  # number of epochs of each inner loop
+o_outerstepsize = 0.05
+decay_rate = 0.999
+min_learning_rate = 1e-4
+epoch = 200
+max_gradient_norm = 5.0
+innerstepsize_test = 1e-4
+innerepochs_test = 30
+epoch_test = 20
+
+
+"""
 
 #get randomly selected support set, not used
 def random_get_support(source_X, source_y, support_size):
@@ -18,9 +115,6 @@ def random_get_support(source_X, source_y, support_size):
 import scipy.io as sc
 import numpy as np
 from functions import *
-#from act_models import *
-#from gram_model import *
-# from gcram_model import *
 from grcam_model import *
 from puretran import *
 import random
