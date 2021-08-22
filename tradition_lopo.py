@@ -1,5 +1,86 @@
 #leave one person out, do training and testing together
 
+"""
+parameter setting:
+MH:
+source_size = 8000
+target_size = 2000
+window_size = 20
+step = 10
+
+emsize = 120  # embedding dimension
+nhid = 2048  # the dimension of the feedforward network model in nn.TransformerEncoder
+nlayers = 2  # the number of nn.TransformerEncoderLayer in nn.TransformerEncoder
+nhead = 3  # the number of heads in the multiheadattention models
+dropout = 0.1  # the dropout value
+
+o_learning_rate = 5e-4
+learning_rate_decay_factor = 0.999
+min_learning_rate = 1e-4
+max_gradient_norm = 2.0
+
+epoch = 2000
+batch_size = 1000
+
+PMP:
+source_size = 8000
+target_size = 2000
+
+window_size = 20
+step = 10
+
+emsize = 120  # embedding dimension
+nhid = 2048  # the dimension of the feedforward network model in nn.TransformerEncoder
+nlayers = 2  # the number of nn.TransformerEncoderLayer in nn.TransformerEncoder
+nhead = 3  # the number of heads in the multiheadattention models
+dropout = 0.1  # the dropout value
+o_learning_rate = 5e-4
+learning_rate_decay_factor = 0.998
+min_learning_rate = 5e-5
+max_gradient_norm = 5.0
+epoch = 1000
+batch_size = 2000
+
+MARS:
+source_size = 8000
+target_size = 2000
+
+window_size = 20
+step = 10
+
+emsize = 120  # embedding dimension
+nhid = 2048  # the dimension of the feedforward network model in nn.TransformerEncoder
+nlayers = 2  # the number of nn.TransformerEncoderLayer in nn.TransformerEncoder
+nhead = 3  # the number of heads in the multiheadattention models
+dropout = 0.1  # the dropout value
+o_learning_rate = 5e-4
+learning_rate_decay_factor = 0.999
+min_learning_rate = 5e-5
+max_gradient_norm = 5.0
+
+epoch = 1000
+batch_size = 1000
+
+UCI:
+source_size = 8000
+target_size = 2000
+
+window_size = 20
+step = 10
+
+emsize = 120  # embedding dimension
+nhid = 2048  # the dimension of the feedforward network model in nn.TransformerEncoder
+nlayers = 2  # the number of nn.TransformerEncoderLayer in nn.TransformerEncoder
+nhead = 3  # the number of heads in the multiheadattention models
+dropout = 0.1  # the dropout value
+o_learning_rate = 5e-4
+learning_rate_decay_factor = 0.998
+min_learning_rate = 1e-4
+max_gradient_norm = 2.0
+
+epoch = 2000
+batch_size = 1000
+"""
 
 #get randomly selected support set, not used
 def random_get_support(source_X, source_y, support_size):
